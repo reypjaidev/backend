@@ -1,5 +1,6 @@
 import { NextFunction, Response } from "express";
 import { TypedRequest } from "../../types/express.js";
+import { sendSuccess } from "../../utils/response.ts";
 import { authService } from "./auth.service.js";
 import { LoginDto, RegisterDto } from "./auth.types.js";
 
@@ -12,7 +13,7 @@ export const authController = {
   ): Promise<void> {
     try {
       const result = await authService.register(req.body);
-      res.status(201).json(result);
+      sendSuccess(res, result);
     } catch (err) {
       next(err);
     }
@@ -26,7 +27,7 @@ export const authController = {
   ): Promise<void> {
     try {
       const result = await authService.login(req.body);
-      res.json(result);
+      sendSuccess(res, result);
     } catch (err) {
       next(err);
     }

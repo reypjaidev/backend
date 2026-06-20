@@ -1,5 +1,6 @@
 import { NextFunction, Response } from "express";
 import { TypedRequest } from "../../types/express.js";
+import { sendSuccess } from "../../utils/response.ts";
 import { usersService } from "./users.service.js";
 import { UpdateUserDto } from "./users.types.js";
 
@@ -12,7 +13,7 @@ export const usersController = {
   ): Promise<void> {
     try {
       const user = await usersService.getById(req.user!._id.toString());
-      res.json(user);
+      sendSuccess(res, user);
     } catch (err) {
       next(err);
     }
@@ -25,8 +26,11 @@ export const usersController = {
     next: NextFunction,
   ): Promise<void> {
     try {
-      const user = await usersService.update(req.user!._id.toString(), req.body);
-      res.json(user);
+      const user = await usersService.update(
+        req.user!._id.toString(),
+        req.body,
+      );
+      sendSuccess(res, user);
     } catch (err) {
       next(err);
     }
@@ -40,7 +44,7 @@ export const usersController = {
   ): Promise<void> {
     try {
       await usersService.delete(req.user!._id.toString());
-      res.json({ message: "Account deleted" });
+      sendSuccess(res, { message: "Account deleted" });
     } catch (err) {
       next(err);
     }

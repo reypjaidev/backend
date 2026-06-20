@@ -1,6 +1,8 @@
-import type { NextFunction, Request, Response } from "express";
-import config from "../config/index.ts";
-import { AppError } from "../errors/index.ts";
+// src/middleware/errorHandler.ts
+import { NextFunction, Request, Response } from "express";
+import config from "../config/index.js";
+import { AppError } from "../errors/index.js";
+import { sendError } from "../utils/response.js";
 
 export function errorHandler(
   err: Error,
@@ -8,18 +10,11 @@ export function errorHandler(
   res: Response,
   next: NextFunction,
 ): void {
-  // known operational errors
   if (err instanceof AppError) {
-    res.status(err.statusCode).json({
-      error: err.message,
-    });
+    sendError(res, err.message, err.statusCode);
     return;
   }
 
-  // unknown/programmer errors
   console.error(err.stack);
-  res.status(500).json({
-    error: "Internal server error",
-    ...(config.isDev && { stack: err.stack }), // show stack in dev only
-  });
+  sendError(res, config.isDev ? err.message : "Internal server error", 500);
 }
