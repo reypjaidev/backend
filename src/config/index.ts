@@ -21,7 +21,8 @@ const config = {
   },
   jwt: {
     secret: process.env.JWT_SECRET as string,
-    expiresIn: process.env.NODE_ENV === "production" ? "15m" : "7d",
+    expiresIn:
+      process.env.NODE_ENV === "production" ? ("15m" as const) : ("7d" as const),
   },
   aws: {
     bucket: process.env.AWS_BUCKET,
