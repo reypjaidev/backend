@@ -3,7 +3,7 @@ import type { Application, Request, Response } from "express";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { errorHandler } from "./middleware/errorHandler.ts";
+import { errorHandler } from "./errors/index.ts";
 
 const app: Application = express();
 

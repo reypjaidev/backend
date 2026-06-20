@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { ZodError, ZodSchema } from "zod";
-import { ValidationError } from "./errorHandler.ts";
+import { ValidationError } from "../errors/index.ts";
 
 export function validate(schema: ZodSchema) {
   return (req: Request, res: Response, next: NextFunction) => {

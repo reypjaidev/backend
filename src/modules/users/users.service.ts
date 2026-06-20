@@ -1,7 +1,4 @@
-import {
-  NotFoundError,
-  ValidationError,
-} from "../../middleware/errorHandler.ts";
+import { NotFoundError, ValidationError } from "../../errors/index.ts";
 import { usersRepository } from "./users.repository.js";
 import { UpdateUserDto, UserResponseDto } from "./users.types.js";
 
