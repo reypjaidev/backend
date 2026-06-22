@@ -1,6 +1,6 @@
 // src/types/express.ts
-import { Request } from "express";
-import { UserDocument } from "../modules/users/users.model.ts";
+import type { Request } from "express";
+import type { UserDocument } from "../modules/users/users.model.ts";
 
 export interface TypedRequest<
   Params = {},

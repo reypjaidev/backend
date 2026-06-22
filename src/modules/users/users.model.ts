@@ -1,5 +1,5 @@
 // src/modules/users/users.model.ts
-import mongoose, { Document, Schema } from "mongoose";
+import mongoose, { type Document, Schema } from "mongoose";
 
 export interface UserDocument extends Document {
   _id: mongoose.Types.ObjectId;

@@ -1,8 +1,8 @@
-import { NextFunction, Response } from "express";
-import { TypedRequest } from "../../types/express.js";
+import type { NextFunction, Response } from "express";
+import type { TypedRequest } from "../../types/express.ts";
 import { sendSuccess } from "../../utils/response.ts";
-import { authService } from "./auth.service.js";
-import { LoginDto, RegisterDto } from "./auth.types.js";
+import { authService } from "./auth.service.ts";
+import type { LoginDto, RegisterDto } from "./auth.types.ts";
 
 export const authController = {
   // POST /api/auth/register

@@ -1,9 +1,9 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import config from "../../config/index.js";
-import { UnauthorizedError, ValidationError } from "../../errors/index.js";
-import { usersRepository } from "../users/users.repository.js";
-import { AuthResponse, LoginDto, RegisterDto } from "./auth.types.js";
+import config from "../../config/index.ts";
+import { UnauthorizedError, ValidationError } from "../../errors/index.ts";
+import { usersRepository } from "../users/users.repository.ts";
+import type { AuthResponse, LoginDto, RegisterDto } from "./auth.types.ts";
 
 export const authService = {
   async register(dto: RegisterDto): Promise<AuthResponse> {

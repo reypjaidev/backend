@@ -1,6 +1,6 @@
 // src/modules/users/users.repository.ts
-import { UserModel } from "./users.model.js";
-import { CreateUserDto, UpdateUserDto } from "./users.types.ts";
+import { UserModel } from "./users.model.ts";
+import type { CreateUserDto, UpdateUserDto } from "./users.types.ts";
 
 export const usersRepository = {
   async findById(id: string) {

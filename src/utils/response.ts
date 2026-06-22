@@ -1,6 +1,6 @@
 // src/utils/response.ts
-import { Response } from "express";
-import { ApiResponse } from "../types/response.js";
+import type { Response } from "express";
+import type { ApiResponse } from "../types/response.ts";
 
 export const sendSuccess = <T>(
   res: Response,

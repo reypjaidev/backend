@@ -1,6 +1,6 @@
 // src/app.ts
 import cors from "cors";
-import express, { Application, Request, Response } from "express";
+import express, { type Application, type Request, type Response } from "express";
 import helmet from "helmet";
 import { authMiddleware } from "./middleware/auth.ts";
 import { errorHandler } from "./middleware/errorHandler.ts";

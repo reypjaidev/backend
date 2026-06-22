@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from "express";
-import { ZodError, ZodSchema } from "zod";
+import type { NextFunction, Request, Response } from "express";
+import { ZodError, type ZodSchema } from "zod";
 import { ValidationError } from "../errors/index.ts";
 
 export function validate(schema: ZodSchema) {

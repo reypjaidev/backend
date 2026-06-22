@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from "express";
-import { AppError } from "../errors/index.js";
-import { sendError } from "../utils/response.js";
+import type { NextFunction, Request, Response } from "express";
+import { AppError } from "../errors/index.ts";
+import { sendError } from "../utils/response.ts";
 
 export function errorHandler(
   err: unknown,

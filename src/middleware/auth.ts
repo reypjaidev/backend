@@ -1,9 +1,9 @@
-import { NextFunction, Response } from "express";
+import type { NextFunction, Response } from "express";
 import jwt from "jsonwebtoken";
-import config from "../config/index.js";
+import config from "../config/index.ts";
 import { UnauthorizedError } from "../errors/index.ts";
 import { usersRepository } from "../modules/users/users.repository.ts";
-import { TypedRequest } from "../types/express.ts";
+import type { TypedRequest } from "../types/express.ts";
 
 export async function authMiddleware(
   req: TypedRequest,

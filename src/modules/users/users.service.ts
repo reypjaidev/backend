@@ -1,6 +1,6 @@
 import { NotFoundError, ValidationError } from "../../errors/index.ts";
-import { usersRepository } from "./users.repository.js";
-import { UpdateUserDto, UserResponseDto } from "./users.types.js";
+import { usersRepository } from "./users.repository.ts";
+import type { UpdateUserDto, UserResponseDto } from "./users.types.ts";
 
 export const usersService = {
   async getById(id: string): Promise<UserResponseDto> {

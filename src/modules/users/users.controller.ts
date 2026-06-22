@@ -1,8 +1,8 @@
-import { NextFunction, Response } from "express";
-import { TypedRequest } from "../../types/express.js";
+import type { NextFunction, Response } from "express";
+import type { TypedRequest } from "../../types/express.ts";
 import { sendSuccess } from "../../utils/response.ts";
-import { usersService } from "./users.service.js";
-import { UpdateUserDto } from "./users.types.js";
+import { usersService } from "./users.service.ts";
+import type { UpdateUserDto } from "./users.types.ts";
 
 export const usersController = {
   // GET /api/users/me
